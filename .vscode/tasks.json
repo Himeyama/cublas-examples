@@ -1,0 +1,40 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ アクティブなファイルのビルド",
+            "command": "/usr/local/cuda-11.5/bin/nvcc",
+            "args": [
+                "-ccbin",
+                "/usr/bin/gcc",
+                "-std=c++11",
+                "${file}",
+                "inspect.o",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "-gencode",
+                "arch=compute_52,code=sm_52",
+	            "-gencode",
+                "arch=compute_60,code=sm_60",
+            	"-gencode", "arch=compute_61,code=sm_61",
+                "-gencode", "arch=compute_70,code=sm_70",
+	            "-gencode", "arch=compute_75,code=sm_75",
+                "-lcublas",
+                "-I.",
+                "-g"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "デバッガーによって生成されたタスク。"
+        }
+    ],
+    "version": "2.0.0"
+}
