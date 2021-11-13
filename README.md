@@ -6,9 +6,7 @@ CuBLAS の関数の使い方例
 
 ![A](images/A_mn.svg)
 
-
-## 行列 (ベクトル) の定数倍
-> A <- k * A
+> 例: A <- k * A
 
 **A の要素が A * k の要素になり、元の値は破壊される。**
 
@@ -27,7 +25,7 @@ cublasSscal(m * n, 2, d_a, 1);
 
 ![A](images/A_mn.svg) ![B](images/B_mn.svg)
 
-> 例1: A <- A + B
+> 例: A <- A + B
 
 **A の要素が A + B の要素になり、元の値は破壊される。**
 
